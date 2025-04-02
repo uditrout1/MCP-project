@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Legacy Modernization</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="/">AI Legacy Modernization</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/chat">Chat</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/crawler">Web Crawler</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/demo">Demo</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h1>AI Legacy Application Modernization</h1>
+                <p class="lead">Modernize legacy applications with AI-powered natural language interfaces</p>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Natural Language API Access</h5>
+                        <p class="card-text">Interact with APIs using natural language queries. Our system translates your requests into API calls and presents the results in a human-readable format.</p>
+                        <a href="/chat" class="btn btn-primary">Try Chat Interface</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Web Crawling & Data Extraction</h5>
+                        <p class="card-text">Extract structured data from web applications. Our crawler can navigate websites, extract information, and enrich it with AI processing.</p>
+                        <a href="/crawler" class="btn btn-primary">Try Web Crawler</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Complete Demo</h5>
+                        <p class="card-text">See all components working together in a comprehensive demonstration of the system's capabilities.</p>
+                        <a href="/demo" class="btn btn-primary">View Demo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-md-12">
+                <h2>How It Works</h2>
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <h4>1. Message Control Protocol (MCP)</h4>
+                        <p>Our system uses a standardized Message Control Protocol to facilitate communication between components and with external APIs. This provides a unified interface for all interactions.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <h4>2. LLM-Powered Natural Language Processing</h4>
+                        <p>Large Language Models analyze user queries to understand intent, extract parameters, and generate human-readable responses from structured data.</p>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <h4>3. Flexible API Connectors</h4>
+                        <p>Connect to various API types (REST, GraphQL, SOAP) with standardized authentication and request/response handling.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <h4>4. Intelligent Web Crawling</h4>
+                        <p>Extract data from web applications using advanced crawling techniques and AI-powered data enrichment.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light py-4 mt-5">
+        <div class="container text-center">
+            <p>AI Legacy Modernization PoC &copy; 2025</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
