@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Demo - AI Legacy Modernization</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="/">AI Legacy Modernization</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/chat">Chat</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/crawler">Web Crawler</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/demo">Demo</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Complete Demo</h1>
+                <p class="lead">This demo showcases all components of the AI Legacy Application Modernization system working together.</p>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">Natural Language Interface</h5>
+                    </div>
+                    <div class="card-body">
+                        <div id="chat-messages" class="chat-container mb-3">
+                            <div class="message system-message">
+                                <div class="message-content">
+                                    <p>Hello! I can help you interact with APIs and web data using natural language. Try asking me about weather, news, or ask me to extract information from a website.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <input type="text" id="user-input" class="form-control" placeholder="Type your message here...">
+                            <button id="send-button" class="btn btn-primary">Send</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header bg-success text-white">
+                        <h5 class="mb-0">System Response</h5>
+                    </div>
+                    <div class="card-body">
+                        <div id="system-response">
+                            <p class="text-muted">System responses will appear here.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card mt-3">
+                    <div class="card-header bg-info text-white">
+                        <h5 class="mb-0">Technical Details</h5>
+                    </div>
+                    <div class="card-body">
+                        <div id="technical-details">
+                            <p class="text-muted">Technical details about the system's processing will appear here.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header bg-secondary text-white">
+                        <h5 class="mb-0">Example Queries</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="card mb-3">
+                                    <div class="card-body">
+                                        <h6 class="card-title">API Queries</h6>
+                                        <div class="list-group">
+                                            <button class="list-group-item list-group-item-action example-query">What's the weather like in New York?</button>
+                                            <button class="list-group-item list-group-item-action example-query">Show me the latest news about technology</button>
+                                            <button class="list-group-item list-group-item-action example-query">What's the temperature in Tokyo in Celsius?</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card mb-3">
+                                    <div class="card-body">
+                                        <h6 class="card-title">Web Crawling Queries</h6>
+                                        <div class="list-group">
+                                            <button class="list-group-item list-group-item-action example-query">Extract the headlines from Hacker News</button>
+                                            <button class="list-group-item list-group-item-action example-query">Get the quotes from quotes.toscrape.com</button>
+                                            <button class="list-group-item list-group-item-action example-query">What languages are available on Wikipedia's homepage?</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card mb-3">
+                                    <div class="card-body">
+                                        <h6 class="card-title">Combined Queries</h6>
+                                        <div class="list-group">
+                                            <button class="list-group-item list-group-item-action example-query">Get the weather in London and summarize the top news</button>
+                                            <button class="list-group-item list-group-item-action example-query">Extract data from Wikipedia and compare it with API results</button>
+                                            <button class="list-group-item list-group-item-action example-query">What's trending on Hacker News and how does it relate to the weather?</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header bg-dark text-white">
+                        <h5 class="mb-0">System Architecture</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h6>Components in Action</h6>
+                                <ul class="list-group">
+                                    <li class="list-group-item">
+                                        <strong>Message Control Protocol (MCP)</strong>
+                                        <div class="progress mt-1">
+                                            <div id="mcp-usage" class="progress-bar" role="progressbar" style="width: 0%"></div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <strong>LLM Natural Language Processing</strong>
+                                        <div class="progress mt-1">
+                                            <div id="llm-usage" class="progress-bar bg-success" role="progressbar" style="width: 0%"></div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <strong>API Connectors</strong>
+                                        <div class="progress mt-1">
+                                            <div id="api-usage" class="progress-bar bg-info" role="progressbar" style="width: 0%"></div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <strong>Web Crawler</strong>
+                                        <div class="progress mt-1">
+                                            <div id="crawler-usage" class="progress-bar bg-warning" role="progressbar" style="width: 0%"></div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h6>System Flow</h6>
+                                <div id="system-flow" class="p-3 bg-light rounded">
+                                    <p class="text-muted">The system flow will be visualized here as you interact with the demo.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light py-4 mt-5">
+        <div class="container text-center">
+            <p>AI Legacy Modernization PoC &copy; 2025</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize demo interface
+            const chatMessages = document.getElementById('chat-messages');
+            const userInput = document.getElementById('user-input');
+            const sendButton = document.getElementById('send-button');
+            const systemResponse = document.getElementById('system-response');
+            const technicalDetails = document.getElementById('technical-details');
+            const exampleQueries = document.querySelectorAll('.example-query');
+            
+            // Component usage indicators
+            const mcpUsage = document.getElementById('mcp-usage');
+            const llmUsage = document.getElementById('llm-usage');
+            const apiUsage = document.getElementById('api-usage');
+            const crawlerUsage = document.getElementById('crawler-usage');
+            const systemFlow = document.getElementById('system-flow');
+            
+            // Set up demo environment
+            fetch('/api/demo/setup', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Demo setup:', data);
+                })
+                .catch(error => {
+                    console.error('Error setting up demo:', error);
+                });
+            
+            // Send message function
+            function sendMessage(message) {
+                if (message === '') return;
+                
+                // Add user message to chat
+                addMessage('user', message);
+                userInput.value = '';
+                
+                // Show thinking indicator
+                addMessage('system', 'Thinking...', 'thinking-message');
+                systemResponse.innerHTML = '<div class="text-center"><div class="spinner-border" role="status"></div><p>Processing your request...</p></div>';
+                technicalDetails.innerHTML = '<p class="text-muted">Analyzing query...</p>';
+                
+                // Simulate component usage
+                animateComponentUsage();
+                
+                // Determine if this is a web crawling query
+                const crawlingKeywords = ['extract', 'scrape', 'crawl', 'get from', 'pull from', 'website', 'web page'];
+                const isCrawlingQuery = crawlingKeywords.some(keyword => message.toLowerCase().includes(keyword));
+                
+                // Send message to appropriate endpoint
+                let endpoint = '/api/chat';
+                
+                // For demo purposes, we'll use the chat endpoint for everything
+                // but show different visualizations based on the query type
+                fetch(endpoint, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ message: message })
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        // Remove thinking indicator
+                        const thinkingMsg = document.querySelector('.thinking-message');
+                        if (thinkingMsg) thinkingMsg.remove();
+                        
+                        // Add response to chat
+                        if (data.error) {
+                            addMessage('system', `Error: ${data.error}`);
+                            systemResponse.innerHTML = `<div class="alert alert-danger">${data.error}</div>`;
+                        } else {
+                            let responseText = data.formatted_response || 'I processed your request.';
+                            addMessage('assistant', responseText);
+                            
+                            // Update system response
+                            systemResponse.innerHTML = `<div class="p-3 bg-light rounded">${responseText}</div>`;
+                            
+                            // Update technical details
+                            let technicalHTML = '';
+                            if (data.api_called) {
+                                technicalHTML += `
+                                    <h6>API Call Details:</h6>
+                                    <ul>
+                                        <li><strong>API:</strong> ${data.api_called}</li>
+                                        <li><strong>Intent:</strong> ${data.intent}</li>
+                                    </ul>
+                                    <h6>Raw Data:</h6>
+                                    <pre class="code-block">${JSON.stringify(data.raw_data, null, 2)}</pre>
+                                `;
+                                
+                                // Update component usage for API call
+                                mcpUsage.style.width = '80%';
+                                llmUsage.style.width = '90%';
+                                apiUsage.style.width = '95%';
+                                crawlerUsage.style.width = isCrawlingQuery ? '70%' : '10%';
+                            } else {
+                                technicalHTML += `
+                                    <h6>Processing Details:</h6>
+                                    <p>The system processed your query using natural language understanding.</p>
+                                    <pre class="code-block">${JSON.stringify(data, null, 2)}</pre>
+                                `;
+                                
+                                // Update component usage for general processing
+                                mcpUsage.style.width = '60%';
+                                llmUsage.style.width = '95%';
+                                apiUsage.style.width = '30%';
+                                crawlerUsage.style.width = isCrawlingQuery ? '90%' : '20%';
+                            }
+                            
+                            technicalDetails.innerHTML = technicalHTML;
+                            
+                            // Update system flow visualization
+                            updateSystemFlow(message, data, isCrawlingQuery);
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error sending message:', error);
+                        // Remove thinking indicator
+                        const thinkingMsg = document.querySelector('.thinking-message');
+                        if (thinkingMsg) thinkingMsg.remove();
+                        
+                        addMessage('system', 'Sorry, there was an error processing your request.');
+                        systemResponse.innerHTML = '<div class="alert alert-danger">An error occurred while processing your request.</div>';
+                        technicalDetails.innerHTML = '<p class="text-danger">Error: Could not process the request.</p>';
+                    });
+            }
+            
+            // Add message to chat
+            function addMessage(role, content, className = '') {
+                const messageDiv = document.createElement('div');
+                messageDiv.className = `message ${role}-message ${className}`;
+                
+                const messageContent = document.createElement('div');
+                messageContent.className = 'message-content';
+                
+                const messagePara = document.createElement('p');
+                messagePara.textContent = content;
+                
+                messageContent.appendChild(messagePara);
+                messageDiv.appendChild(messageContent);
+                chatMessages.appendChild(messageDiv);
+                
+                // Scroll to bottom
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+            
+            // Animate component usage indicators
+            function animateComponentUsage() {
+                // Reset all indicators
+                mcpUsage.style.width = '0%';
+                llmUsage.style.width = '0%';
+                apiUsage.style.width = '0%';
+                crawlerUsage.style.width = '0%';
+                
+                // Animate MCP usage
+                setTimeout(() => {
+                    mcpUsage.style.width = '40%';
+                    mcpUsage.style.transition = 'width 0.5s';
+                }, 300);
+                
+                // Animate LLM usage
+                setTimeout(() => {
+                    llmUsage.style.width = '60%';
+                    llmUsage.style.transition = 'width 0.8s';
+                }, 800);
+                
+                // Animate API usage
+                setTimeout(() => {
+                    apiUsage.style.width = '30%';
+                    apiUsage.style.transition = 'width 0.6s';
+                }, 1200);
+                
+                // Animate Crawler usage
+                setTimeout(() => {
+                    crawlerUsage.style.width = '20%';
+                    crawlerUsage.style.transition = 'width 0.7s';
+                }, 1500);
+            }
+            
+            // Update system flow visualization
+            function updateSystemFlow(query, response, isCrawlingQuery) {
+                let flowHTML = '<h6 class="mb-3">Processing Flow:</h6>';
+                
+                if (isCrawlingQuery) {
+                    flowHTML += `
+                        <div class="flow-step">1. User query received: "${query}"</div>
+                        <div class="flow-arrow">↓</div>
+                        <div class="flow-step">2. LLM analyzes query and identifies web crawling intent</div>
+                        <div class="flow-arrow">↓</div>
+                        <div class="flow-step">3. Web Crawler extracts data from target website</div>
+                        <div class="flow-arrow">↓</div>
+                        <div class="flow-step">4. Data Processor structures and enriches extracted data</div>
+                        <div class="flow-arrow">↓</div>
+                        <div class="flow-step">5. LLM generates natural language response</div>
+                        <div class="flow-arrow">↓</div>
+                        <div class="flow-step">6. Response delivered to user</div>
+                    `;
+                } else if (response.api_called) {
+                    flowHTML += `
+                        <div class="flow-step">1. User query received: "${query}"</div>
+                        <div class="flow-arrow">↓</div>
+                        <div class="flow-step">2. LLM analyzes query and identifies API call intent</div>
+                        <div class="flow-arrow">↓</div>
+                        <div class="flow-step">3. MCP formats request for ${response.api_called} API</div>
+                        <div class="flow-arrow">↓</div>
+                        <div class="flow-step">4. API Connector sends request and receives response</div>
+                        <div class="flow-arrow">↓</div>
+                        <div class="flow-step">5. LLM formats API response into natural language</div>
+                        <div class="flow-arrow">↓</div>
+                        <div class="flow-step">6. Response delivered to user</div>
+                    `;
+                } else {
+                    flowHTML += `
+                        <div class="flow-step">1. User query received: "${query}"</div>
+                        <div class="flow-arrow">↓</div>
+                        <div class="flow-step">2. LLM analyzes query and processes the request</div>
+                        <div class="flow-arrow">↓</div>
+                        <div class="flow-step">3. Response generated based on available information</div>
+                        <div class="flow-arrow">↓</div>
+                        <div class="flow-step">4. Response delivered to user</div>
+                    `;
+                }
+                
+                systemFlow.innerHTML = flowHTML;
+            }
+            
+            // Event listeners
+            sendButton.addEventListener('click', () => sendMessage(userInput.value.trim()));
+            userInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    sendMessage(userInput.value.trim());
+                }
+            });
+            
+            // Example query buttons
+            exampleQueries.forEach(button => {
+                button.addEventListener('click', function() {
+                    const query = this.textContent;
+                    userInput.value = query;
+                    sendMessage(query);
+                });
+            });
+        });
+    </script>
+    <style>
+        .chat-container {
+            height: 300px;
+            overflow-y: auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            background-color: #f9f9f9;
+        }
+        
+        .message {
+            margin-bottom: 15px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .user-message {
+            align-items: flex-end;
+        }
+        
+        .assistant-message, .system-message {
+            align-items: flex-start;
+        }
+        
+        .message-content {
+            max-width: 80%;
+            padding: 10px 15px;
+            border-radius: 15px;
+        }
+        
+        .user-message .message-content {
+            background-color: #007bff;
+            color: white;
+            border-top-right-radius: 5px;
+        }
+        
+        .assistant-message .message-content {
+            background-color: #e9ecef;
+            color: #212529;
+            border-top-left-radius: 5px;
+        }
+        
+        .system-message .message-content {
+            background-color: #6c757d;
+            color: white;
+            border-top-left-radius: 5px;
+        }
+        
+        .code-block {
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            padding: 10px;
+            font-size: 0.9em;
+            overflow-x: auto;
+            max-height: 200px;
+        }
+        
+        .flow-step {
+            background-color: #e9ecef;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            padding: 8px 12px;
+            margin-bottom: 5px;
+        }
+        
+        .flow-arrow {
+            text-align: center;
+            font-weight: bold;
+            margin: 5px 0;
+        }
+        
+        .progress {
+            height: 10px;
+        }
+        
+        .progress-bar {
+            transition: width 1s;
+        }
+    </style>
+</body>
+</html>
